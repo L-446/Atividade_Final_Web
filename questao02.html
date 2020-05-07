@@ -21,20 +21,31 @@
         var produto  = form_carne.produto.value;
         var valor    = form_carne.valor.value;
         var parcela  = form_carne.parcela.value;
+      
 
-        if (parcela==3){
-          valor= valor+(valor*0.5);
+        if (parcela==3) {
+         var taxajuros = (parseFloat(valor) * 0.05);
+         var valortotal = (parseFloat(valor) + parseFloat(taxajuros));
+        }   
+
+        else if  (parcela==6) {   
+        var taxajuros = (parseFloat(valor) * 0.12 );
+        var valortotal = (parseFloat(valor) + parseFloat(taxajuros));
         }
-        else if (parcela==6){
-          valor= valor+(valor*0.12);
+        else {
+        var valortotal = (parseFloat(valor));
         }
-         var valor_Parcela = valor/parcela;
 
         for (i=1;i<=parcela;i++){
-         document.write(i+ "° Parcela <br>")
+          document.getElementById("CARNÊ DE PAGAMENTO").innerHTML = 
+        "---------------------------------------------- <b>CARNÊ DE PAGAMENTO</b> ----------------------------------------------"+
+        "<br><b>NOME DO CLIENTE:</b> "+nome.toUpperCase()+
+        "<br><b>NOME DO PRODUTO:</b> "+produto.toUpperCase()+
+        "<br><b>VALOR DO PRODUTO:</b> "+parseFloat(valortotal).toLocaleString('pt-BR')+
+        "<br><b>NUMERO DA PARCELA:</b> " +i +"/"+parcela.toLocaleString('pt-BR')+
+        "<br>------------------------------------------------------------------------------------------------------------------"
+}
          }
-
-      }
     </script>
 
   </head>
@@ -82,41 +93,37 @@
         <form style="text-align:left" name="form_carne" id="form_carne">
           <div class="form-row">
             <div class="col-md-6 mb-3">
-            <div class="col">
               <label>Nome do Cliente</label>
-              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do Cliente" required>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Cliente" required>
+              </select>
             </div>
-          </div>
-          </div>
-          <div class="form-row">
+
             <div class="col-md-6 mb-3">
-            <div class="col">
-              <label>Produto</label>
-              <input type="text" class="form-control" id="disciplina" name="produto" placeholder="produto" required>
+              <label>Nome do Produto</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="produto" name="produto" placeholder="Digite o nome do Produto" required>
+              </div>
             </div>
-          </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="col-md-6 mb-3">
-              <label>Valor do Produto</label>
-              <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor do Produto" required>
-            </div>
-          </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="col-md-6 mb-3">
-              <label>Quantidade de PARCELAS</label>
-              <input type="number" class="form-control" id="qnt" name="qnt" min="1" max="6" placeholder="Parcelas" >
-            </div>
-          </div>
           </div>
 
-            <button onclick="verificar()" class="btn btn-outline-primary float-right" type="button" >Verificar</button>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>Valor do Produto</label>
+              <input type="number" class="form-control" id="valor" name="valor" placeholder="Digite o valor" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Quantidade de Parcelas</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="parcela" name="parcela" placeholder="Digite o numero de Parcelas" required>
+              </div>
+            </div>
+          </div>
+
+            <button onclick="verificar()" class="btn btn-outline-primary float-right" type="button">Verificar</button>
           </form>
           <br></br>
-         <p id="CARNÊ DE PAGAMENTO"></p>
+         <p style="text-align:left"id="CARNÊ DE PAGAMENTO"></p>
 
     </main>
     
