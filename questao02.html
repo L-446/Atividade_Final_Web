@@ -35,17 +35,18 @@
         else {
         var valortotal = (parseFloat(valor));
         }
-
+       
         for (i=1;i<=parcela;i++){
           document.getElementById("CARNÊ DE PAGAMENTO").innerHTML = 
         "---------------------------------------------- <b>CARNÊ DE PAGAMENTO</b> ----------------------------------------------"+
         "<br><b>NOME DO CLIENTE:</b> "+nome.toUpperCase()+
         "<br><b>NOME DO PRODUTO:</b> "+produto.toUpperCase()+
         "<br><b>VALOR DO PRODUTO:</b> "+parseFloat(valortotal).toLocaleString('pt-BR')+
-        "<br><b>NUMERO DA PARCELA:</b> " +i +"/"+parcela.toLocaleString('pt-BR')+
-        "<br>------------------------------------------------------------------------------------------------------------------"
-}
-         }
+        "<br><b>QUANTIDADE DE PARCELAS:</b> "+parcela.toLocaleString('pt-BR')+
+        "<br><b>NUMERO DA PARCELA:</b> "+i+ "/" +parcela.toLocaleString('pt-BR')+
+        "<br>---------------------------------------------------------------------------------------------------------------------"
+       }
+    }
     </script>
 
   </head>

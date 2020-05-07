@@ -27,19 +27,19 @@
           alert("Olá "+nome+ "você está no nível de obesidade: Baixo Peso. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Peso baixo para a altura. Maior probabilidade de anorexia.");
         }
         else if(imc>=18.5 && imc<24.9){
-          alert("Olá "+nome+ "você está no nível de obesidade: Peso Normal. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Maior probabilidade de ser um individuo saudável.");
+          alert("Olá "+nome+ " você está no nível de obesidade: Peso Normal. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Maior probabilidade de ser um individuo saudável.");
         }      
         else if(imc>=25 && imc<29.9) {
-          alert("Olá "+nome+ "você está no nível de obesidade: Pré-obesidade. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Alguma probabilidade de problemas de saúde. Predisposição a torna-se obeso.");
+          alert("Olá "+nome+ " você está no nível de obesidade: Pré-obesidade. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Alguma probabilidade de problemas de saúde. Predisposição a torna-se obeso.");
         }
         else if(imc>=30 && imc<34,9) {
-          alert("Olá "+nome+ "você está no nível de obesidade: Obesidade Grau I. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco moderado de diabetes tipo II, hirtensão, colesterol, cardiopatia.");
+          alert("Olá "+nome+ " você está no nível de obesidade: Obesidade Grau I. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco moderado de diabetes tipo II, hirtensão, colesterol, cardiopatia.");
         }
         else if (imc>35 && imc<39,9){
-          alert("Olá "+nome+ "você está no nível de obesidade: Obesidade Grau II. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%.");
+          alert("Olá "+nome+ " você está no nível de obesidade: Obesidade Grau II. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%.");
         }
         else if (imc>40){
-          alert("Olá "+nome+ "você está no nível de obesidade: Obesidade Grau III. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco muito grave. O risco de doenças associadas assim como a mortalidade aumenta 90%.");
+          alert("Olá "+nome+ " você está no nível de obesidade: Obesidade Grau III. Com este nivel de IMC você está propenso a apresentar os seguintes problema de saúde: Risco muito grave. O risco de doenças associadas assim como a mortalidade aumenta 90%.");
         }
 
      
@@ -95,32 +95,30 @@
       <div class="starter-template">
         <h1>Questão - 04</h1>
         <p class="lead">Software para calcular o Indice de Massa Corporal (IMC).<br> O Software pode ser utilizado por Profissionais da area de Saude.</p>
-
+        
         <form style="text-align:left" name="form_calcularimc" id="form_calcularimc">
           <div class="form-row">
-            <div class="col-md-6 mb-3">
             <div class="col">
               <label>Nome do Paciente</label>
-              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do Paciente" required>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Paciente" required>
             </div>
           </div>
-          </div>
+
           <div class="form-row">
             <div class="col-md-6 mb-3">
-            <div class="col">
               <label>Altura</label>
-              <input type="text" class="form-control" id="altura" name="altura" placeholder="Altura do Paciente" required>
+              <input type="text" class="form-control" id="altura" name="altura" placeholder="Digite a altura do Paciente" required>
             </div>
-          </div>
-          </div>
-          <div class="form-row">
-            <div class="col">
-              <div class="col-md-6 mb-3">
+
+            <div class="col-md-6 mb-3">
               <label>Peso</label>
-              <input type="text" class="form-control" id="peso" name="peso" placeholder="Peso do Paciente" required>
+              <div class="input-group">
+                <input type="text" class="form-control" id="peso" name="peso" placeholder="Digite o peso do Paciente" required>
+              </div>
             </div>
           </div>
-          </div>
+
+
           <button onclick="clcimc()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
         </form>
           
