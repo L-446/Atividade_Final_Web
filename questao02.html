@@ -37,14 +37,14 @@
         }
        
         for (i=1;i<=parcela;i++){
-          document.getElementById("CARNÊ DE PAGAMENTO").innerHTML = 
-        "---------------------------------------------- <b>CARNÊ DE PAGAMENTO</b> ----------------------------------------------"+
-        "<br><b>NOME DO CLIENTE:</b> "+nome.toUpperCase()+
-        "<br><b>NOME DO PRODUTO:</b> "+produto.toUpperCase()+
-        "<br><b>VALOR DO PRODUTO:</b> "+parseFloat(valortotal).toLocaleString('pt-BR')+
-        "<br><b>QUANTIDADE DE PARCELAS:</b> "+parcela.toLocaleString('pt-BR')+
-        "<br><b>NUMERO DA PARCELA:</b> "+i+ "/" +parcela.toLocaleString('pt-BR')+
-        "<br>---------------------------------------------------------------------------------------------------------------------"
+         document.write
+        ("<b>CARNÊ DE PAGAMENTO</b> "+
+        "<br>NOME DO CLIENTE: "+nome.toUpperCase()+
+        "<br>NOME DO PRODUTO: "+produto.toUpperCase()+
+        "<br>VALOR DO PRODUTO: "+parseFloat(valortotal).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
+        "<br>QUANTIDADE DE PARCELAS:"+parcela.toLocaleString('pt-BR')+
+        "<br>NUMERO DA PARCELA:"+i+ "/" +parcela.toLocaleString('pt-BR')+
+        "<hr>")
        }
     }
     </script>
@@ -109,14 +109,17 @@
 
           <div class="form-row">
             <div class="col-md-6 mb-3">
-              <label>Valor do Produto</label>
-              <input type="number" class="form-control" id="valor" name="valor" placeholder="Digite o valor" required>
+              <label>Quantidade de Parcelas</label>
+              <input type="number" class="form-control" id="parcela" name="parcela" min="1" max="6" placeholder="Digite o numero de Parcelas" required>
             </div>
 
             <div class="col-md-6 mb-3">
-              <label>Quantidade de Parcelas</label>
+              <label>Valor do Produto</label>
               <div class="input-group">
-                <input type="number" class="form-control" id="parcela" name="parcela" placeholder="Digite o numero de Parcelas" required>
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend2">R$</span>
+                </div>
+                <input type="text" class="form-control" id="valor" name="valor" required>
               </div>
             </div>
           </div>
