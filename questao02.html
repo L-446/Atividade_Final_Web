@@ -1,19 +1,41 @@
 <!doctype html>
-<html lang="pt-BR">
-
+<html lang= "pt-BR">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Projeto WEB - AV1</title>
-  
+    
     <!-- CSS Topo e Rodapé -->
     <link href="css/starter-template.css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
 
-     <!-- Icone da Pagina--> 
-    <link rel="icon" href="img/interface.ico">
+   <!-- Icone da Pagina--> 
+   <link rel="icon" href="img/interface.ico">
+ 
+    <!-- Solução Questão - 02 -->
+    <script type="text/javascript">
+      function verificar(){
 
+        var nome     = form_carne.nome.value;
+        var produto  = form_carne.produto.value;
+        var valor    = form_carne.valor.value;
+        var parcela  = form_carne.parcela.value;
+
+        if (parcela==3){
+          valor= valor+(valor*0.5);
+        }
+        else if (parcela==6){
+          valor= valor+(valor*0.12);
+        }
+         var valor_Parcela = valor/parcela;
+
+        for (i=1;i<=parcela;i++){
+         document.write(i+ "° Parcela <br>")
+         }
+
+      }
+    </script>
 
   </head>
 
@@ -42,10 +64,10 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">QUESTÕES</a>
             <div class="dropdown-menu" aria-labelledby="dropdown01">
-              <a class="dropdown-item" target="_blank" href="questao01.html">Questão 01</a>
-              <a class="dropdown-item" target="_blank" href="questao02.html">Questão 02</a>
-              <a class="dropdown-item" target="_blank" href="questao03.html">Questão 03</a>
-              <a class="dropdown-item" target="_blank" href="questao04.html">Questão 04</a>
+              <a class="dropdown-item" href="questao01.html">Questão 01</a>
+              <a class="dropdown-item" href="questao02.html">Questão 02</a>
+              <a class="dropdown-item" href="questao03.html">Questão 03</a>
+              <a class="dropdown-item" href="questao04.html">Questão 04</a>
             </div>
           </li>
       </ul>>
@@ -53,45 +75,54 @@
     
     <main role="main" class="container">
 
+      <div class="starter-template">
+        <h1>Questão - 02</h1>
+        <p class="lead">Software para gerar CARNÊ DE PAGAMENTO de um cliente.<br> O Software pode ser utilizado no setor de Pagamento de empresas.</p>
 
-      <div class="row mb-2">
-        <div class="col-md-6">
-          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-primary">World</strong>
-              <h3 class="mb-0">Sobre mim...</h3>
-              <div class="mb-1 text-muted">Maio 08</div>
-              <p class="card-text mb-auto">Olá, eu me chamo Letícia Gomes da Silva Rodrigues, tenho 19 anos e nasci no dia 13 de Setembro do ano 2000. No meu tempo livre gosto de me distrair jogando video game, jogando futebol ou praticando algum tipo de esporte. Os meios tecnologicos sempre me intrigaram e foi a partir dai que hoje invisto na Graduação no ramo da Tecnologia.</p>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <img src="img/eu2.jpeg"  width="260" height="500">
+        <form style="text-align:left" name="form_carne" id="form_carne">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+            <div class="col">
+              <label>Nome do Cliente</label>
+              <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome completo do Cliente" required>
             </div>
           </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static">
-              <strong class="d-inline-block mb-2 text-success">Work</strong>
-              <h3 class="mb-0">Profissional</h3>
-              <div class="mb-1 text-muted">Maio 08</div>
-              <p class="mb-auto">Sou formada na area Tecnica da Construção Civil, mais precisamente em Agrimenura. Atualmente estou no 3° semestre de Analise e Desenvolvimento de Sistemas na UNILEÃO. Faço um estagio na UNILEÃO no setor da COPEX (Centro de Pesquisa e Extenção)</p>
-              <p><i>(A imagem reflete o meu lugar favorito depois de um ano de muito estudo e trabalho.)</i></p>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-              <img src="img/mar.jpg"  width="260" height="500">
+          </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+            <div class="col">
+              <label>Produto</label>
+              <input type="text" class="form-control" id="disciplina" name="produto" placeholder="produto" required>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-      
-    </main> </br>
-  
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="col-md-6 mb-3">
+              <label>Valor do Produto</label>
+              <input type="number" class="form-control" id="valor" name="valor" placeholder="Valor do Produto" required>
+            </div>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="col-md-6 mb-3">
+              <label>Quantidade de PARCELAS</label>
+              <input type="number" class="form-control" id="qnt" name="qnt" min="1" max="6" placeholder="Parcelas" >
+            </div>
+          </div>
+          </div>
 
-    <footer style="font-family: Arial, Helvetica, sans-serif;" class="footer">
-        <div>
-          <span class="text-muted">Site desenvolvido por <b>Letícia Gomes</b> - Code in <a target="_blank" href="#">GitHub</a> </span>
+            <button onclick="verificar()" class="btn btn-outline-primary float-right" type="button" >Verificar</button>
+          </form>
+          <br></br>
+         <p id="CARNÊ DE PAGAMENTO"></p>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Site desenvolvido por Letícia Gomes - Code in <a target="_blank" href="#">GitHub</a> </span>
         </div>
     </footer>
 

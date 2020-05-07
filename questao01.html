@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang= "pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Projeto WEB - AV1</title>
+    
+    <!-- CSS Topo e Rodapé -->
+    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Icone da Pagina--> 
+    <link rel="icon" href="img/interface.ico">
+
+ 
+    <!-- Solução Questão - 01 -->
+    <script type="text/javascript">
+      function calcular(){
+        var nome    =  form_calcularmedia.nome.value;
+        var disciplina  =  form_calcularmedia.disciplina.value;
+        var nota1 = form_calcularmedia.nota1.value;
+        var nota2 = form_calcularmedia.nota2.value;
+
+        var media = (parseFloat(nota1) + parseFloat(nota2))/2; 
+
+     if(media.toFixed(1) >= 7.0){
+         alert ("APROVADO")
+     }
+     else if((media.toFixed(1) < 3.0) && (media.toFixed(1)  > 7.0)){
+          alert ("RECUPERAÇÃO")
+      }
+      else{
+          alert("REPROVADO")
+      }
+
+      document.getElementById("Media Aritimetica").innerHTML= 
+        "---------------------------------------------- <b>MEDIA ARITIMETICA</b> ----------------------------------------------"+
+        "<br><b>ALUNO:</b> "+nome.toUpperCase()+
+        "<br><b>DISCIPLINA:</b> "+disciplina.toUpperCase()+
+        "<br><b>NOTA 01:</b> "+parseFloat(nota1).toLocaleString('pt-BR')+
+        "<br><b>NOTA 02:</b> " +parseFloat(nota1).toLocaleString('pt-BR')+
+        "<br><b>MEDIA:</b> "+media.toLocaleString('pt-BR')+
+        "<br>------------------------------------------------------------------------------------------------------------------"
+
+      }
+    </script>
+
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">PROGRAMAÇÃO WEB - AV1</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">MEUS CONTATOS</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown01">
+                <img src="img/insta.png" style="width:18px"  id="insta"><a target="_blank" href="https://www.instagram.com/lleticia_13/?hl=pt-br">@lleticia_13</a></br>
+                  <img src="img/Whats.png" style="width:18px"  id="Whats"><a target="_blank" href="https://wa.me/5588996282113?text=Olá%20Leticia">@Letícia</a></br>
+                  <img src="img/face.png" style="width:18px"  id="face"><a target="_blank" href="https://www.facebook.com/leh.rodrigues.30/">@LetíciaGomes</a></br>
+              </div>
+            </li>
+      
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">QUESTÕES</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="questao01.html">Questão 01</a>
+              <a class="dropdown-item" href="questao02.html">Questão 02</a>
+              <a class="dropdown-item" href="questao03.html">Questão 03</a>
+              <a class="dropdown-item" href="questao04.html">Questão 04</a>
+            </div>
+          </li>
+      </ul>>
+    </header>
+    
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Questão - 01</h1>
+        <p class="lead">Software para calcular a MEDIA ARITIMÉTICA de Alunos.<br> O Software pode ser utilizado por qualquer professor e qualquer Instituição.</p>
+
+        <form style="text-align:left" name="form_calcularmedia" id="form_calcularmedia">
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>Nome do Aluno</label>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome do Aluno" required>
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Disciplina</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="disciplina" name="disciplina" placeholder="Digite a Disciplina" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>Nota 01</label>
+              <input type="number" class="form-control" id="nota1" name="nota1" placeholder="Digite sua Primeira Nota" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Nota 02</label>
+              <div class="input-group">
+                <input type="number" class="form-control" id="nota2" name="nota2" placeholder="Digite sua Segunda Nota" required>
+              </div>
+            </div>
+          </div>
+
+
+            <button onclick="calcular()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+          </form>
+      <p style="text-align: left;" id="Media Aritimetica"></p>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+          <span class="text-muted">Site desenvolvido por Letícia Gomes - Code in <a target="_blank" href="#">GitHub</a> </span>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+    </body>
+</html>
