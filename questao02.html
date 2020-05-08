@@ -22,7 +22,6 @@
         var valor    = form_carne.valor.value;
         var parcela  = form_carne.parcela.value;
       
-
         if (parcela==3) {
          var taxajuros = (parseFloat(valor) * 0.05);
          var valortotal = (parseFloat(valor) + parseFloat(taxajuros));
@@ -35,6 +34,7 @@
         else {
         var valortotal = (parseFloat(valor));
         }
+        var valorparcela = (parseFloat (valortotal) / parseFloat (parcela));
        
         for (i=1;i<=parcela;i++){
          document.write
@@ -43,6 +43,7 @@
         "<br>NOME DO PRODUTO: "+produto.toUpperCase()+
         "<br>VALOR DO PRODUTO: "+parseFloat(valortotal).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
         "<br>QUANTIDADE DE PARCELAS:"+parcela.toLocaleString('pt-BR')+
+        "<br>VALOR DA PARCELAS:"+parseFloat(valorparcela).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+
         "<br>NUMERO DA PARCELA:"+i+ "/" +parcela.toLocaleString('pt-BR')+
         "<hr>")
        }
